@@ -106,9 +106,7 @@ client.on("message", async message => {
 
         let embed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setDescription(`
-<@${user.id}> Was Warned For **${reason}** By <@${message.author.id}>
-        `)
+        .setDescription(`<@${user.id}> Was Warned For **${reason}** By <@${message.author.id}>`)
         message.channel.send(embed)
         db.add(`warns_${message.guild.id}_${user.id}`, 1) // `warns_${message.guild.id}_${user.id}` Because Warning Will be Different In All Server, If We Keep `warns_${user.id}` Then It Will Show Same Warnings In All Servers // Add 1 Warning To User
     }
@@ -124,9 +122,7 @@ client.on("message", async message => {
 
         let embed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setDescription(`
-<@${user.id}> Has **${warnings}** Warnings
-        `)
+        .setDescription(`<@${user.id}> Has **${warnings}** Warnings`)
         message.channel.send(embed)
     }
     
@@ -136,9 +132,7 @@ client.on("message", async message => {
 
         let embed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setDescription(`
-<@${user.id}> has all warnings deleted by <@${message.author.id}>
-        `)
+        .setDescription(`<@${user.id}> has all warnings deleted by <@${message.author.id}>`)
         message.channel.send(embed)
         db.delete(`warns_${message.guild.id}_${user.id}`) 
     
@@ -182,9 +176,7 @@ client.on("message", async message => {
             } else {
                 const embed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
-                .setDescription(`
-<@${user.id}> Successfully Purchased **1** *Laptop* For *$10,000*
-                `)
+                .setDescription(`<@${user.id}> Successfully Purchased **1** *Laptop* For *$10,000*`)
                 message.channel.send(embed)
                 db.push(message.author.id, "laptop") // Add 1 Laptop To User
                 db.subtract(`money_${user.id}`, amount) // Remove Money From Using
@@ -211,9 +203,7 @@ client.on("message", async message => {
             } else {
                 const embed = new Discord.MessageEmbed()
                 .setColor('RANDOM')
-                .setDescription(`
-<@${user.id}> Successfully Purchased **1** *House* For *$1,000,000*
-                `)
+                .setDescription(`<@${user.id}> Successfully Purchased **1** *House* For *$1,000,000*`)
                 message.channel.send(embed)
                 db.push(message.author.id, "house") // Add 1 House To User
                 db.subtract(`money_${user.id}`, amount) // Remove Money From Using
@@ -232,8 +222,7 @@ client.on("message", async message => {
             message.channel.send(`Already Claimed Daily Coins, Claim Again In **${timeleft.hours} Hours ${timeleft.minutes} Minutes ${timeleft.seconds} Seconds**
 Default CoolDown Is **24 Hours(1 Day)**`)
         } else {
-          message.channel.send(`
-<@${user.id}> has claimed $5000 as daily reward`)
+          message.channel.send(`<@${user.id}> has claimed $5000 as daily reward`)
             db.add(`money_${user.id}`, amount) // Add Amount To User's Wallet
             db.set(`dailytime_${user.id}`, Date.now()) // Set Time When Command Was Used.
         }
