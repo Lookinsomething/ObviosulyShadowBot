@@ -4,10 +4,10 @@ Only made for a Discord user ObviouslyShadow
 
 Here are the packages you need for this bot!
 
-discord-leveling v1.1.0
-discord.js v13.1.0
-node-fetch v2.6.1
-quick.db v7.1.3
+[discord-leveling v1.1.0]
+[discord.js v13.1.0]
+[node-fetch v2.6.1]
+[quick.db v7.1.3]
 
 **How do I download?**
 1. Open the terminal of the file you're making for the bot
